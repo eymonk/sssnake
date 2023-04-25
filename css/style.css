@@ -14,13 +14,16 @@
 }
 
 :root {
-  --dark-gray: #444;
-  --gray: #0008;
   --white: #fff;
   --black: #000;
+  --black-transparent: #0008;
+  --gray-light: #ddd;
   --green: #5a3;
-  --dark-transparent: #666d;
+
   --transition: 150ms;
+
+  --border-radius: 3px;
+
   --wrapper-border: 5px solid var(--black);
 }
 
@@ -41,6 +44,7 @@ body {
   font-family: 'ubuntu', 'Courier', monospace;
   font-size: 22px;
 
+  background-color: var(--gray-light);
   cursor: pointer;
   border-radius: var(--border-radius);
   border: none;
@@ -51,7 +55,7 @@ body {
 }
 
 .wrapper {
-  background-color: var(--gray);
+  background-color: var(--black-transparent);
   padding: 0.5rem;
 }
 
@@ -117,7 +121,7 @@ body {
   align-items: center;
 
   font-size: 22px;
-  background-color: var(--gray);
+  background-color: var(--black-transparent);
   border-bottom: var(--wrapper-border);
   backdrop-filter: blur(3px);
 }
@@ -152,6 +156,7 @@ body {
   justify-content: space-between;
   align-items: center;
   background-color: var(--black);
+  border-radius: var(--border-radius);
 }
 
 .screen__wrapper {
@@ -171,28 +176,25 @@ body {
 /****** FOOTER ******/
 .footer {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
+  gap: 15px;
   width: 100%;
   font-size: 25px;
   border-bottom: var(--wrapper-border);
 }
 
-.footer__year {
-  margin: 0 26px;
-}
-
 .footer__link {
-  transition: transform var(--transition);
+  border-radius: var(--border-radius);
+  padding: 6px;
+  background-color: var(--gray-light);
+  transition: background-color var(--transition);
 }
 .footer__link:hover {
-  transform: scale(1.1);
+  background-color: var(--green);
 }
 
 .footer__icon {
-  width: 36px;
-}
-.footer__icon.rs {
-  width: 70px;
+  width: 28px;
 }
 
