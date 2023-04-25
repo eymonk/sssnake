@@ -171,17 +171,17 @@ const state = {
     this.scoreFactor = 1;
     snake.increaseFactor = 1;
     food.interval = 6000;
-    direction.dirBuffer = direction.random;
-    dom.score.textContent = '00';
-    dom.speed.textContent = 1;
-    dom.snake.textContent = 5;
+    direction.dirBuffer = ['right'];
+    dom.score.textContent = '0';
+    dom.speed.textContent = '1';
+    dom.snake.textContent = '5';
     snake.createNew();
   },
 
   changeScore () {
     this.score += this.scoreFactor;
 
-    //increase scorefactor
+    //increase score factor
     if (this.score >= 22 && !this.factoredByScore) {
       this.factoredByScore = true;
       this.scoreFactor++;
@@ -193,8 +193,7 @@ const state = {
       this.scoreFactor++;
     }
 
-    const scoreStr = String(this.score);
-    dom.score.textContent = scoreStr.length === 1 ? `0${scoreStr}` : scoreStr;
+    dom.score.textContent = String(this.score);
 
     if (food.interval > food.minInterval) food.interval -= 300;
 
@@ -205,7 +204,7 @@ const state = {
     if (state.frameTime >= state.frameMinTime) {
       let speed = Number(dom.speed.textContent);
       state.frameTime -= 4;
-      dom.speed.textContent = ++speed;
+      dom.speed.textContent = `${++speed}`;
     } else {
       dom.speed.textContent = 'max';
     }
@@ -379,7 +378,7 @@ function animate() {
 function initiate() {
   snake.createNew();
 
-  //sets food invisible at the beginnig
+  //sets food invisible at the beginning
   food.eat(); 
 
   canvas.width = state.fieldSize * state.unit;
@@ -420,6 +419,7 @@ dom.btns.pause.addEventListener('click', (event) => {
 
 
 dom.btns.history.addEventListener('click', () => {
+  game.pause();
   state.isModalOpen = true;
   let scores = localStorage.getItem('snake-scores');
 
