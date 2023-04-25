@@ -15,7 +15,7 @@
 
 :root {
   --dark-gray: #444;
-  --gray: #555d;
+  --gray: #0008;
   --white: #fff;
   --black: #000;
   --green: #5a3;
@@ -32,7 +32,7 @@ html {
 body {
   min-height: 100vh;
   height: 100vh;
-  background-image: url(../assets/img/pattern.jpg);
+  background-image: url(../assets/img/pattern.jpeg);
   color: var(--white);
 }
 
@@ -63,7 +63,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #5555;
+  background-color: #0001;
 }
 
 .parent-wrapper{
@@ -146,7 +146,7 @@ body {
 
 .screen {
   width: 50%;
-  padding: 5px 10px;
+  padding: 8px 10px;
 
   display: flex;
   justify-content: space-between;
