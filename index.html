@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>snake-game | rs-school</title>
+  <link rel="stylesheet" href="css/style.css"> 
+  <link rel="icon" href="assets/img/custom-snake-icon.ico">
+</head>
+<body>
+  <div class="container">
+      <div class="parent-wrapper">
+        <main class="main">
+          <div class="wrapper main__wrapper">
+            <div class="screen">
+              <p class="screen__score">00</p>
+
+              <div class="screen__wrapper">
+                <p class="screen__speed">1</p>
+                <img class="screen__icon screen__icon_speed" src="/assets/svg/speed.svg" alt="speed icon">
+              </div>
+
+              <div class="screen__wrapper">
+                <p class="screen__snake">5</p>
+                <img class="screen__icon" src="/assets/svg/snake.svg" alt="snake icon">
+              </div>
+            </div>
+            <p class="main__message"></p>
+          </div>
+
+          <div class="main__wrapper">
+            <canvas class="canvas">
+            </canvas>
+            <div class="wrapper main__btn-wrapper">
+              <button class="btn main__btn main__btn_play" tabindex="-1">new game</button>
+              <button class="btn main__btn main__btn_pause" tabindex="-1">pause</button>
+              <button class="btn main__btn main__btn_history" tabindex="-1">history</button>
+            </div>
+          </div>
+
+          <div class="main__history-wrapper">
+            <p class="main__history-title">game history</p>
+            <div class="main__history"></div>
+            <button class="btn main__btn main__btn_history-ok">ok</button>
+          </div>
+        </main>
+
+        <footer class="wrapper footer">
+          <p>many rights reserved😁</p>
+          <a class="footer__link" href="https://t.me/jaysun0" target="_blank">
+            <img class="footer__icon" src="assets/svg/telegram-icon.svg" alt="telegram logo">
+          </a>
+        </footer>
+        <audio class="sound__play" src="assets/sounds/play.mp3"></audio>
+        <audio class="sound__pause" src="assets/sounds/pause.mp3"></audio>
+        <audio class="sound__eat" src="assets/sounds/eat.mp3"></audio>
+        <audio class="sound__food" src="assets/sounds/food.mp3"></audio>
+        <audio class="sound__game-over" src="assets/sounds/game-over.mp3"></audio>
+      </div>
+  </div>
+  <script src="js/index.js"></script>
+</body>
+</html>
