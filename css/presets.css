@@ -1,0 +1,79 @@
+@font-face {
+    font-family: 'ubuntu';
+    src: url(../assets/fonts/ubuntuMono.ttf);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+*:focus {
+    outline: none;
+}
+
+:root {
+    --white: #fff;
+    --black: #000;
+    --black-transparent: #0008;
+    --gray-light: #ddd;
+    --green: #5a3;
+
+    --transition: 150ms;
+
+    --border-radius: 3px;
+
+    --wrapper-border: 5px solid var(--black);
+}
+
+html {
+    font-size: 30px;
+    font-family: 'ubuntu', 'Courier', monospace;
+}
+
+body {
+    min-height: 100vh;
+    height: 100vh;
+    background-image: url(../assets/img/pattern.jpeg);
+    color: var(--white);
+}
+
+.btn {
+    padding: 5px 15px;
+    font-family: 'ubuntu', 'Courier', monospace;
+    font-size: 22px;
+
+    background-color: var(--gray-light);
+    cursor: pointer;
+    border-radius: var(--border-radius);
+    border: none;
+    transition: background-color var(--transition);
+}
+.btn:hover {
+    background-color: var(--green);
+}
+
+.wrapper {
+    background-color: var(--black-transparent);
+    padding: 0.5rem;
+}
+
+.main-container {
+    height: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #0001;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border: var(--wrapper-border);
+    border-bottom: none;
+    border-radius: var(--border-radius);
+}

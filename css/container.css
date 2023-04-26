@@ -1,0 +1,90 @@
+.container__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container__btn-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-top: var(--wrapper-border);
+    border-bottom: var(--wrapper-border);
+    height: 100%;
+}
+
+.container__btn {
+    margin: 10px;
+    min-width: 130px;
+}
+
+.container__message {
+    margin: 0 10px;
+}
+
+.canvas {
+    background-color: var(--black);
+}
+
+/* progress screen */
+.screen {
+    width: 50%;
+    padding: 8px 10px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--black);
+    border-radius: var(--border-radius);
+}
+
+.screen__wrapper {
+    display: flex;
+}
+
+.screen__icon {
+    width: 28px;
+    margin: 0 5px;
+}
+
+.screen__icon_speed {
+    width: 23px;
+}
+
+/* player history */
+.container__history-wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 22px;
+    background-color: var(--black-transparent);
+    border-bottom: var(--wrapper-border);
+    backdrop-filter: blur(3px);
+}
+
+.container__history-title {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.container__history {
+    padding: 1rem;
+}
+.container__history p{
+    margin: 5px;
+}
+.container__history-number {
+    color: var(--green);
+}
+
+
+

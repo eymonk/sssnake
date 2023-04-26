@@ -1,0 +1,23 @@
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    font-size: 25px;
+    border-bottom: var(--wrapper-border);
+}
+
+.footer__link {
+    border-radius: var(--border-radius);
+    padding: 6px;
+    background-color: var(--gray-light);
+    transition: background-color var(--transition);
+}
+.footer__link:hover {
+    background-color: var(--green);
+}
+
+.footer__icon {
+    width: 28px;
+}
