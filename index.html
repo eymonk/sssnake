@@ -27,7 +27,7 @@
               <p class="screen__score">0</p>
             </div>
           </div>
-          <p class="container__message"></p>
+          <p class="container__notification"></p>
         </div>
 
         <div class="container__wrapper">
@@ -40,10 +40,11 @@
           </div>
         </div>
 
-        <div class="container__history-wrapper">
-          <p class="container__history-title">game history</p>
-          <div class="container__history"></div>
-          <button class="btn container__btn container__btn_history-ok">ok</button>
+        <div class="container__message message hidden">
+          <p class="message__title">game history</p>
+          <p class="message__best-score hidden">best score: <span class="message__history-number best-score"></span></p>
+          <div class="message__text"></div>
+          <button class="btn message__btn message__btn_ok">ok</button>
         </div>
 
         <footer class="wrapper footer">

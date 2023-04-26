@@ -15,9 +15,9 @@
 :root {
     --white: #fff;
     --black: #000;
-    --black-transparent: #0008;
+    --black-transparent: #0009;
     --gray-light: #ddd;
-    --green: #5a3;
+    --green: #53c724;
 
     --transition: 150ms;
 
@@ -76,4 +76,8 @@ body {
     border: var(--wrapper-border);
     border-bottom: none;
     border-radius: var(--border-radius);
+}
+
+.hidden {
+    display: none !important;
 }

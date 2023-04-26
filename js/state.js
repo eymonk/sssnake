@@ -32,15 +32,17 @@ const dom = {
     score: document.querySelector('.screen__score'),
     speed: document.querySelector('.screen__speed'),
     snake: document.querySelector('.screen__snake'),
-    message: document.querySelector('.container__message'),
-    history: document.querySelector('.container__history'),
-    historyWrapper: document.querySelector('.container__history-wrapper'),
-    historyTitle: document.querySelector('.container__history-title'),
+    notification: document.querySelector('.container__notification'),
+    message: document.querySelector('.message'),
+    messageTitle: document.querySelector('.message__title'),
+    messageText: document.querySelector('.message__text'),
+    bestScore: document.querySelector('.message__best-score'),
+    bestScoreNumber: document.querySelector('.best-score'),
     btns: {
         play: document.querySelector('.container__btn_play'),
         pause: document.querySelector('.container__btn_pause'),
         history: document.querySelector('.container__btn_history'),
-        historyOk: document.querySelector('.container__btn_history-ok'),
+        messageOk: document.querySelector('.message__btn_ok'),
     },
     sounds: {
         play: document.querySelector('.sound__play'),
@@ -59,6 +61,22 @@ const colors = {
     food: '#fa2',
     eating: '#ee5',
     lost: '#911',
+}
+
+
+function showMessage(title, text) {
+    dom.message.classList.remove('hidden');
+    dom.messageTitle.textContent = title;
+    dom.messageText.textContent = '';
+    if (text) {
+        if (typeof text === 'string') dom.messageText.textContent = text;
+        else dom.messageText.appendChild(text);
+    };
+}
+
+function notify(text, isShort) {
+    dom.notification.textContent = text;
+    if (isShort) setTimeout(() => dom.notification.textContent = '', 3000);
 }
 
 function draw() {
@@ -100,7 +118,7 @@ function showResult() {
     function createResultString(text, number) {
         const p = document.createElement('p');
         const n = document.createElement('span');
-        n.classList.add('container__history-number');
+        n.classList.add('message__history-number');
         p.textContent = text;
         n.textContent = number;
         p.appendChild(n);
@@ -112,15 +130,15 @@ function showResult() {
     const speedData = createResultString('your speed: ', dom.speed.textContent);
     const bestData = createResultString(`best score: `, localStorage.getItem('snake-best'));
     const br = document.createElement('br');
+    const container = document.createElement('div');
 
-    dom.history.textContent = '';
-    dom.history.appendChild(scoreData);
-    dom.history.appendChild(speedData);
-    dom.history.appendChild(snakeData);
-    dom.history.appendChild(br);
-    dom.history.appendChild(bestData);
-    dom.historyTitle.textContent = 'game over';
-    dom.historyWrapper.style.display = 'flex';
+    container.appendChild(scoreData);
+    container.appendChild(speedData);
+    container.appendChild(snakeData);
+    container.appendChild(br);
+    container.appendChild(bestData);
+
+    showMessage('game over', container);
     state.isModalOpen = true;
 }
 
@@ -177,11 +195,6 @@ function saveScore() {
     showResult();
 }
 
-function showMessage(msg, short) {
-    dom.message.textContent = msg
-    if (short) setTimeout(() => dom.message.textContent = '', 3000);
-}
-
 export default state;
 export {
     dom,
@@ -191,4 +204,5 @@ export {
     changeScore,
     saveScore,
     showMessage,
+    notify,
 }

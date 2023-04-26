@@ -4,9 +4,8 @@ import state, {
     dom,
     colors,
     resetState,
-    showMessage,
     saveScore,
-    animate
+    animate, notify
 } from './state.js';
 
 function startGame() {
@@ -17,7 +16,7 @@ function startGame() {
         state.game = true;
         animate();
         state.foodAnimation = setInterval(() => setFood(), food.interval);
-        showMessage('good luck', true);
+        notify('good luck', true);
     }
 }
 
@@ -26,7 +25,7 @@ function pauseGame() {
         dom.sounds.pause.play();
         state.game = false;
         clearInterval(state.foodAnimation);
-        showMessage('game paused');
+        notify('game paused');
     }
 }
 

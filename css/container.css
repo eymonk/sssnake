@@ -18,7 +18,7 @@
     min-width: 130px;
 }
 
-.container__message {
+.container__notification {
     margin: 0 10px;
 }
 
@@ -51,40 +51,7 @@
     width: 23px;
 }
 
-/* player history */
-.container__history-wrapper {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
 
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    font-size: 22px;
-    background-color: var(--black-transparent);
-    border-bottom: var(--wrapper-border);
-    backdrop-filter: blur(3px);
-}
-
-.container__history-title {
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: bold;
-}
-
-.container__history {
-    padding: 1rem;
-}
-.container__history p{
-    margin: 5px;
-}
-.container__history-number {
-    color: var(--green);
-}
 
 
 

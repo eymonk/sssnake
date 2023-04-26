@@ -1,4 +1,3 @@
-import state from './state.js';
 
 const direction = {
     current: 'right',
