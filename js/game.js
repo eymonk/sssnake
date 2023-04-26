@@ -15,7 +15,7 @@ function startGame() {
         dom.btns.play.textContent = 'play';
         state.game = true;
         animate();
-        state.foodAnimation = setInterval(() => setFood(), food.interval);
+        food.foodAnimation = setInterval(() => setFood(), food.interval);
         notify('good luck', true);
     }
 }
@@ -24,7 +24,7 @@ function pauseGame() {
     if(state.game) {
         dom.sounds.pause.play();
         state.game = false;
-        clearInterval(state.foodAnimation);
+        clearInterval(food.foodAnimation);
         notify('game paused');
     }
 }
@@ -36,6 +36,7 @@ function endGame() {
     saveScore();
     changeSnakeColor(colors.lost);
     dom.btns.play.textContent = 'new game';
+    notify('game over');
 }
 
 export {

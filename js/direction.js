@@ -1,12 +1,14 @@
-
 const direction = {
     current: 'right',
     buffer: ['right'],
 }
 
+
 function changeDirection(dir) {
     direction.buffer.push(dir);
 }
+
+
 function setDirection() {
     const lastDir = direction.buffer[direction.buffer.length - 1];
     if (direction.current === 'right' && lastDir !== 'left') direction.current = lastDir;
@@ -17,7 +19,6 @@ function setDirection() {
 
 
 export default direction;
-
 export {
     changeDirection,
     setDirection,

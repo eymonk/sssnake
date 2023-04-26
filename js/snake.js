@@ -16,6 +16,7 @@ const snake = {
     initialLength: 5,
 }
 
+
 class snakePart {
     constructor (x, y) {
         this.x = x;
@@ -63,6 +64,7 @@ function moveSnake() {
 
     checkCollision();
 }
+
 
 function eat() {
     dom.sounds.eat.play();
@@ -122,7 +124,6 @@ function passCoordinates(x, y, count) {
 
 
 export default snake;
-
 export {
     createNewSnake,
     moveSnake,

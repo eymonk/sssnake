@@ -10,7 +10,7 @@
 
 .footer__link {
     border-radius: var(--border-radius);
-    padding: 6px;
+    padding: 6px 6px 3px 6px;
     background-color: var(--gray-light);
     transition: background-color var(--transition);
 }
