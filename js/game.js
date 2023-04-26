@@ -1,8 +1,7 @@
-import { changeSnakeColor } from './snake.js';
+import { setCollisionColors } from './snake.js';
 import food, { setFood } from './food.js';
 import state, {
     dom,
-    colors,
     resetState,
     saveScore,
     animate,
@@ -35,12 +34,12 @@ function pauseGame() {
 
 function endGame() {
     dom.btns.play.textContent = 'new game';
-    changeSnakeColor(colors.lost);
     dom.sounds.gameOver.play();
     notify('game over');
     state.isGameOver = true;
     pauseGame();
     saveScore();
+    setCollisionColors();
 }
 
 

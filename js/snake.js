@@ -102,10 +102,18 @@ function checkCollision() {
 
 function changeSnakeColor(color) {
     snake.body.forEach((part, ind) => {
-        dom.ctx.fillStyle = color;
-        if (ind === 0 && state.game) dom.ctx.fillStyle = colors.head;
+        if (ind > 0) dom.ctx.fillStyle = color;
+        else dom.ctx.fillStyle = colors.head;
         dom.ctx.fillRect(part.x, part.y, state.unit, state.unit);
     })
+}
+
+
+function setCollisionColors() {
+    dom.ctx.fillStyle = colors.lost;
+    dom.ctx.fillRect(snake.body[0].x, snake.body[0].y, state.unit, state.unit);
+    dom.ctx.fillStyle = colors.body;
+    dom.ctx.fillRect(snake.body[1].x, snake.body[1].y, state.unit, state.unit);
 }
 
 
@@ -124,4 +132,5 @@ export {
     createNewSnake,
     moveSnake,
     changeSnakeColor,
+    setCollisionColors,
 }
