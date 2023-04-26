@@ -23,6 +23,7 @@ const state = {
     frameTime: 120,
     frameMinTime: 45,
     strokeWidth: 2,
+    notificationTimeout: null,
 }
 
 
@@ -76,7 +77,8 @@ function showMessage(title, text) {
 
 function notify(text, isShort) {
     dom.notification.textContent = text;
-    if (isShort) setTimeout(() => dom.notification.textContent = '', 3000);
+    clearTimeout(state.notificationTimeout);
+    if (isShort) state.notificationTimeout = setTimeout(() => dom.notification.textContent = '', 3000);
 }
 
 function draw() {
