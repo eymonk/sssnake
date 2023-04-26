@@ -13,9 +13,9 @@ const food = {
 
 function setFood() {
     const random = getRandomCanvasPosition();
+    dom.sounds.food.play();
     food.x = random.x;
     food.y = random.y;
-    dom.sounds.food.play();
 }
 
 

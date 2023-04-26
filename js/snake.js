@@ -28,16 +28,13 @@ class snakePart {
 function createNewSnake() {
     snake.body.length = 0;
     const random = getRandomCanvasPosition();
-    for (let i = 0; i < snake.initialLength; i++) {
-        snake.body.push(new snakePart(random.x, random.y));
-    }
+    for (let i = 0; i < snake.initialLength; i++) snake.body.push(new snakePart(random.x, random.y));
 }
 
 
 function moveSnake() {
     const head = snake.body[0];
     const unit = state.unit;
-
     passCoordinates(head.x, head.y, 1);
 
     if (direction.current === 'left') {
@@ -68,24 +65,23 @@ function moveSnake() {
 
 function eat() {
     dom.sounds.eat.play();
-    const bodyColor = colors.body;
-    const eatingColor = colors.eating;
-    eatFood();
     changeScore();
-
-    //increase snake
-    for(let i = 0; i < snake.increaseFactor; i++) {
-        snake.body.push(new snakePart(0 - state.unit, 0));
-    }
-    dom.snake.textContent = `${snake.body.length}`;
+    eatFood();
 
     //change snake color after eating
+    const bodyColor = colors.body;
+    const eatingColor = colors.eating;
     colors.body = eatingColor;
     colors.eating = bodyColor;
+
     setTimeout(() => {
         colors.body = bodyColor;
         colors.eating = eatingColor;
     }, 1000);
+
+    //increase snake
+    for(let i = 0; i < snake.increaseFactor; i++) snake.body.push(new snakePart(0 - state.unit, 0));
+    dom.snake.textContent = `${ snake.body.length }`;
 }
 
 

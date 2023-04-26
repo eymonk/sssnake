@@ -1,15 +1,10 @@
 import direction, { changeDirection } from './js/direction.js';
+import state, { dom, showMessage } from './js/state.js';
 import { pauseGame, startGame } from './js/game.js';
 import { createNewSnake } from './js/snake.js';
 import { eatFood } from './js/food.js';
-import state, {
-  colors,
-  dom,
-  showMessage
-} from './js/state.js';
 
 
-/***** EVENT LISTENERS ******/
 document.addEventListener('keydown', (e) => {
   const key = e.key.toLowerCase();
   const dir = direction.buffer[direction.buffer.length - 1];
@@ -27,10 +22,12 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
+
 dom.btns.play.addEventListener('click', (event) => {
   startGame();
   event.target.blur();
 });
+
 
 dom.btns.pause.addEventListener('click', (event) => {
   pauseGame();
@@ -64,19 +61,17 @@ dom.btns.history.addEventListener('click', () => {
   dom.message.classList.remove('hidden');
 });
 
+
 dom.btns.messageOk.addEventListener('click', () => {
   dom.message.classList.add('hidden');
   dom.bestScore.classList.add('hidden');
   state.isModalOpen = false;
 });
 
-(function () {
-  createNewSnake();
-  //sets food invisible at the beginning
-  eatFood();
 
+(function () {
+  eatFood();
+  createNewSnake();
   dom.canvas.width = state.fieldSize * state.unit;
   dom.canvas.height = state.fieldSize * state.unit;
-  dom.ctx.lineWidth = state.strokeWidth;
-  dom.ctx.strokeStyle = colors.stroke;
 })();
