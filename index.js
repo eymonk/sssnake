@@ -68,10 +68,26 @@ dom.btns.messageOk.addEventListener('click', () => {
   state.isModalOpen = false;
 });
 
+function setCanvasSize() {
+  const bodyWidth = document.querySelector('body').clientWidth;
+
+  if (bodyWidth < 750) {
+    const canvasSize = Math.floor(bodyWidth / state.unit) * state.unit;
+    dom.canvasWrapper.classList.add('mobile');
+    dom.menuWrapper.classList.add('mobile');
+    dom.canvas.width = canvasSize;
+    dom.canvas.height = canvasSize;
+    if (bodyWidth < 600) state.unit = 18;
+    else if (bodyWidth < 500) state.unit = 16;
+    else if (bodyWidth < 400) state.unit = 14;
+  } else {
+    dom.canvas.width = state.fieldSize * state.unit;
+    dom.canvas.height = state.fieldSize * state.unit;
+  }
+}
 
 (function () {
+  setCanvasSize();
   eatFood();
   createNewSnake();
-  dom.canvas.width = state.fieldSize * state.unit;
-  dom.canvas.height = state.fieldSize * state.unit;
 })();

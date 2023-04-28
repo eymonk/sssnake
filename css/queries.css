@@ -1,0 +1,44 @@
+@media screen and (max-width: 400px) {
+    .screen {
+        font-size: 20px;
+    }
+
+    .screen__icon {
+        width: 20px;
+        margin: 0 3px;
+    }
+
+    .screen__icon_speed {
+        width: 15px;
+    }
+
+    .container__notification {
+        font-size: 18px;
+    }
+
+    .container__wrapper_screen {
+        padding: 10px;
+    }
+
+    .container__btn-wrapper {
+        gap: 10px;
+        padding: 20px 10px;
+    }
+
+    .container__btn {
+        padding: 5px 9px;
+        font-size: 18px;
+    }
+
+    .screen {
+        padding: 8px 4px;
+    }
+
+    .footer__link {
+        padding: 1px 5px 1px 5px;
+    }
+
+    .footer__icon {
+        width: 18px;
+    }
+}

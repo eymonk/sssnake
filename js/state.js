@@ -27,6 +27,8 @@ const state = {
 
 const dom = {
     canvas: document.querySelector('.canvas'),
+    canvasWrapper: document.querySelector('.container__wrapper_canvas'),
+    menuWrapper: document.querySelector('.container__btn-wrapper'),
     ctx: document.querySelector('.canvas').getContext('2d'),
     score: document.querySelector('.screen__score'),
     speed: document.querySelector('.screen__speed'),
