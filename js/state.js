@@ -152,7 +152,7 @@ function showResult() {
 
 
 function increaseScoreFactor() {
-    if (state.score >= 22 && !this.factoredByScore) {
+    if (state.score >= 22 && !state.factoredByScore) {
         state.factoredByScore = true;
         state.scoreFactor++;
     } else if(snake.maxIncreaseFactor === snake.increaseFactor && !state.factoredByLength) {
