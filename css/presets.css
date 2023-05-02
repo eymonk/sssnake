@@ -27,15 +27,17 @@
 }
 
 html {
+    height: 100%;
     font-size: 30px;
     font-family: 'ubuntu', 'Courier', monospace;
+    overscroll-behavior: none;
 }
 
 body {
-    min-height: 100vh;
-    height: 100vh;
+    height: 100%;
     background-image: url(../assets/img/pattern.jpeg);
     color: var(--white);
+    overscroll-behavior: none;
 }
 
 .btn {

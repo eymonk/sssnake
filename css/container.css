@@ -2,17 +2,22 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background: var(--black-transparent);
 }
+
+.container__wrapper_canvas {
+    border-top: var(--wrapper-border);
+    border-bottom: var(--wrapper-border);
+}
+
 
 .container__btn-wrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 15px;
-
-    border-top: var(--wrapper-border);
-    border-bottom: var(--wrapper-border);
     height: 100%;
+    background: none;
 }
 
 .container__btn-wrapper.mobile {
