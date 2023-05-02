@@ -1,26 +1,9 @@
-import direction, { changeDirection } from './js/direction.js';
 import state, { dom, showMessage } from './js/state.js';
 import { pauseGame, startGame } from './js/game.js';
 import { createNewSnake } from './js/snake.js';
 import { eatFood } from './js/food.js';
+import './js/directionMobile.js';
 
-
-document.addEventListener('keydown', (e) => {
-  const key = e.key.toLowerCase();
-  const dir = direction.buffer[direction.buffer.length - 1];
-
-  if (key === 'arrowleft' && dir !== 'right') changeDirection('left');
-  else if (key === 'arrowright' && dir !== 'left') changeDirection('right');
-  else if (key === 'arrowup' && dir !== 'down') changeDirection('up');
-  else if (key === 'arrowdown' && dir !== 'up') changeDirection('down');
-  else if (key === 'escape') pauseGame();
-  else if (key === 'enter') {
-    if (state.isModalOpen) {
-      dom.message.classList.add('hidden');
-      state.isModalOpen = false;
-    } else startGame();
-  }
-});
 
 
 dom.btns.play.addEventListener('click', (event) => {
@@ -68,8 +51,9 @@ dom.btns.messageOk.addEventListener('click', () => {
   state.isModalOpen = false;
 });
 
+
 function setCanvasSize() {
-  const bodyWidth = document.querySelector('body').clientWidth;
+  const bodyWidth = document.body.clientWidth;
 
   if (bodyWidth < 750) {
     const canvasSize = Math.floor(bodyWidth / state.unit) * state.unit;
@@ -85,6 +69,7 @@ function setCanvasSize() {
     dom.canvas.height = state.fieldSize * state.unit;
   }
 }
+
 
 (function () {
   setCanvasSize();

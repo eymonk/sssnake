@@ -67,6 +67,7 @@ body {
     justify-content: center;
     align-items: center;
     background-color: #0001;
+    overflow: hidden;
 }
 
 .container {
