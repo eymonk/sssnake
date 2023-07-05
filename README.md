@@ -1,10 +1,6 @@
 # sssnake
-Hello :) <br>
-This project is a classical snake game.
-
-## Features
-+ Can be played on mobile.
-+ Has history.
+Hello :-)<br>
+This project is a classical snake game which can be played on mobile. Also it has history.
 
 ## Link
 [https://dakochkin.ru/sssnake/](https://dakochkin.ru/sssnake/)
