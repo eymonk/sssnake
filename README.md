@@ -3,7 +3,7 @@ Hello :-)<br>
 This project is a classical snake game which can be played on mobile. Also it has history.
 
 ## Link
-[https://dakochkin.ru/sssnake/](https://dakochkin.ru/sssnake/)
+[https://eymonk.ru/sssnake/](https://eymonk.ru/sssnake/)
 
 ## Contacts
 Telegram:[@jaysun0](https://t.me/jaysun0) <br>
